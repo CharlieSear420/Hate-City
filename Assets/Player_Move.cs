@@ -17,6 +17,8 @@ public class Player_Move : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
+    
+
 
     void Update()
     {
@@ -34,17 +36,21 @@ public class Player_Move : MonoBehaviour
 
         controller.Move(move * PlayerSpeed * Time.deltaTime);
 
-       /*
+       
         
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
-       */
+       
         
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+       
+        
+        
 
     }
 }
