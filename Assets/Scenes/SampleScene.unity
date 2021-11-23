@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.05
+    agentRadius: 0.08
     agentHeight: 0.71
     agentSlope: 11.2
     agentClimb: 0.4
@@ -114,7 +114,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.016666668
+    cellSize: 0.026666665
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -135,9 +135,9 @@ GameObject:
   - component: {fileID: 263352456}
   - component: {fileID: 263352455}
   - component: {fileID: 263352454}
-  - component: {fileID: 263352453}
   - component: {fileID: 263352452}
   - component: {fileID: 263352451}
+  - component: {fileID: 263352453}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -160,12 +160,6 @@ MonoBehaviour:
   controller: {fileID: 263352453}
   PlayerSpeed: 12
   gravity: -9.81
-  jumpHeight: 3
-  groundCheck: {fileID: 781920810}
-  groundDistance: 0.4
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!54 &263352452
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -196,10 +190,10 @@ CharacterController:
   m_Height: 1
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.03, z: 0}
 --- !u!65 &263352454
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -271,7 +265,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263352450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.964, y: 143.51, z: 111.51}
+  m_LocalPosition: {x: 33.26, y: 143.471, z: 111.51}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 963194228}
@@ -369,7 +363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288443122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.460583, y: 143.24, z: 108.68853}
+  m_LocalPosition: {x: 32.47, y: 143.23, z: 109.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -503,11 +497,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -462981019419857548, guid: d3b63ecfaede9d74c953e72eb8ac4ec8, type: 3}
---- !u!4 &781920810 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d3b63ecfaede9d74c953e72eb8ac4ec8, type: 3}
-  m_PrefabInstance: {fileID: 1141400963}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +575,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.11, y: 0.4, z: -0.83}
+  m_LocalPosition: {x: -0.11, y: 0.4, z: -1.19}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 263352457}
@@ -619,15 +608,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d3b63ecfaede9d74c953e72eb8ac4ec8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d3b63ecfaede9d74c953e72eb8ac4ec8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d3b63ecfaede9d74c953e72eb8ac4ec8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d3b63ecfaede9d74c953e72eb8ac4ec8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -668,6 +657,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d3b63ecfaede9d74c953e72eb8ac4ec8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d3b63ecfaede9d74c953e72eb8ac4ec8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d3b63ecfaede9d74c953e72eb8ac4ec8, type: 3}
       propertyPath: m_Name
