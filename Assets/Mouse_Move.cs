@@ -21,6 +21,7 @@ public class Mouse_Move : MonoBehaviour
 
 
         playerBody.Rotate(Vector3.up * mouseX);
+        
 
     }
 }
