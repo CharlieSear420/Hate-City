@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- 
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class Player_Move : MonoBehaviour
 {
     public CharacterController controller;
@@ -10,7 +12,10 @@ public class Player_Move : MonoBehaviour
     public float gravity = -9.81f;
     
     Vector3 velocity;
-    
+
+    public GameObject deathMenu;
+    public GameObject winMenu;
+
     void Start()
     {
         controller.enabled = true;
@@ -44,11 +49,37 @@ public class Player_Move : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
  
         controller.Move(velocity * Time.deltaTime);
-        
+
+        if (Input.GetKeyDown("r"))
+        { //If you press R
+            SceneManager.LoadScene("SampleScene"); //Load scene called Game
+        }
+
     }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        string objectname = collision.gameObject.tag;
+
+        if (objectname == "enemy")
+        {
+            Time.timeScale = 0f;
+            Debug.Log("dead");
+            deathMenu.SetActive(true);
+        }
+
+        if (objectname == "finish")
+        {
+            Time.timeScale = 0f;
+            Debug.Log("fin");
+            winMenu.SetActive(true);
+        }
+
+    }
+
 }
- 
+
 //ADD A PLAYER CONTROLLER TO THE PLAYER. 
 //MAKE SURE THIS CONTROLLER IS LEVEL WITH THE PLAYERS FEET.
- 
+
 
